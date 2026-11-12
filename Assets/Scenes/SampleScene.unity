@@ -2776,6 +2776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 977590366}
   - component: {fileID: 977590367}
+  - component: {fileID: 977590368}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -2810,10 +2811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce648975ea803fa4799f4da105df6d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_Sp
-  enemyPrefab: {fileID: 6678759125759426282, guid: 5dd4b1c7f098d3e42aef98e002cd0c92, type: 3}
   enemyHPPrefab: {fileID: 3303633618015883971, guid: 841f12ea965b9d14e88b912134656042, type: 3}
   hpUIParent: {fileID: 1202808537}
-  spawnTime: 0.5
   wayPoints:
   - {fileID: 1853305615}
   - {fileID: 1615127044}
@@ -2831,6 +2830,46 @@ MonoBehaviour:
   - {fileID: 468248745}
   playerHP: {fileID: 1416761735}
   playerGold: {fileID: 1416761736}
+--- !u!114 &977590368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977590365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abcaf376d0dc9b44ae3c449531132f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveSystem
+  waves:
+  - spawnTime: 0.5
+    maxEnemyCount: 10
+    enemyPrefabs:
+    - {fileID: 6678759125759426282, guid: 5dd4b1c7f098d3e42aef98e002cd0c92, type: 3}
+  - spawnTime: 0.5
+    maxEnemyCount: 20
+    enemyPrefabs:
+    - {fileID: 6678759125759426282, guid: f34c8b4aac33a8d4180e6bc003eb50ee, type: 3}
+  - spawnTime: 0.5
+    maxEnemyCount: 50
+    enemyPrefabs:
+    - {fileID: 6678759125759426282, guid: f34c8b4aac33a8d4180e6bc003eb50ee, type: 3}
+    - {fileID: 6678759125759426282, guid: a6a62546f772a384fa0b275ece60b1b0, type: 3}
+  - spawnTime: 0.5
+    maxEnemyCount: 80
+    enemyPrefabs:
+    - {fileID: 6678759125759426282, guid: f34c8b4aac33a8d4180e6bc003eb50ee, type: 3}
+    - {fileID: 6678759125759426282, guid: a6a62546f772a384fa0b275ece60b1b0, type: 3}
+    - {fileID: 6678759125759426282, guid: ea33df96315f6c74e8c8d9b125a8b0f5, type: 3}
+  - spawnTime: 0.5
+    maxEnemyCount: 100
+    enemyPrefabs:
+    - {fileID: 6678759125759426282, guid: f34c8b4aac33a8d4180e6bc003eb50ee, type: 3}
+    - {fileID: 6678759125759426282, guid: a6a62546f772a384fa0b275ece60b1b0, type: 3}
+    - {fileID: 6678759125759426282, guid: ea33df96315f6c74e8c8d9b125a8b0f5, type: 3}
+    - {fileID: 6678759125759426282, guid: 4f6ab0aa5f036e94da48c8fef502ec5b, type: 3}
+  enemySpawner: {fileID: 977590367}
 --- !u!1001 &987734684
 PrefabInstance:
   m_ObjectHideFlags: 0
