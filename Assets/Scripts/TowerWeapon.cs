@@ -20,6 +20,12 @@ public class TowerWeapon : MonoBehaviour
     private EnemySpawner enemySpawner; //게임에 존재하는 적 정보 획득용
     private Transform attackTarget = null; //공격 대상
     private WeaponState weaponState; //타워 무기의 상태
+    private int level; //타워 레벨
+
+    public float Damage => attackDamage;
+    public float Rate => attackRate;
+    public float Range => attackRange;
+    public float Level => level + 1;
 
     public void Setup(EnemySpawner enemySpawner)
     {
