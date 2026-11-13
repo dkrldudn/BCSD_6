@@ -136,11 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502c61cdaaf9ab468b611c292458ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWeapon
+  towerTemplate: {fileID: 11400000, guid: 4176da265fcc42f4297d48819f96d7da, type: 2}
   spawnPoint: {fileID: 8051173491050579736}
   projectilePrefab: {fileID: 8625661417093827546, guid: ea41c09b8a462cb498e8df33fe30eb5d, type: 3}
-  attackRate: 0.5
-  attackRange: 2
-  attackDamage: 1
+  spriteRenderer: {fileID: 0}
 --- !u!1 &6696781863478544880
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,11 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7502c61cdaaf9ab468b611c292458ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWeapon
+  towerTemplate: {fileID: 11400000, guid: 4176da265fcc42f4297d48819f96d7da, type: 2}
   spawnPoint: {fileID: 8051173491050579736}
   projectilePrefab: {fileID: 8625661417093827546, guid: ea41c09b8a462cb498e8df33fe30eb5d, type: 3}
-  attackRate: 0.5
-  attackRange: 2
-  attackDamage: 1
+  spriteRenderer: {fileID: 0}
 --- !u!65 &3578214866262833088
 BoxCollider:
   m_ObjectHideFlags: 0

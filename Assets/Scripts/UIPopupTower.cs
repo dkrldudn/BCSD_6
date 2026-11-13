@@ -17,6 +17,10 @@ public class UIPopupTower : MonoBehaviour
     private TextMeshProUGUI textLevel;
     [SerializeField]
     private TowerAttackRange towerAttackRange;
+    [SerializeField]
+    private Button buttonUpgrade;
+    [SerializeField]
+    private SystemTextViewer systemTextViewer;
     
     private TowerWeapon currentTower;
 
@@ -55,9 +59,40 @@ public class UIPopupTower : MonoBehaviour
 
     private void UpdateTowerDate()
     {
+        imageTower.sprite = currentTower.TowerSprite;
         textDamage.text = $"Damage : {currentTower.Damage}";
         textRate.text = $"Ratee : {currentTower.Rate}";
         textRange.text = $"Range : {currentTower.Range}";
         textLevel.text = $"Level : {currentTower.Level}";
+
+        //업그레이드가 불가능해지면 버튼 비활성화
+        buttonUpgrade.interactable = currentTower.Level < currentTower.MaxLevel;
+    }
+
+    public void OnclickEventTowerUpgrade()
+    {
+        //타워 업그레이드 시도 (성공: true, 실패: false)
+        bool isSuccess = currentTower.Upgrade();
+
+        if(isSuccess == true)
+        {
+            //타워가 업그레이드 되었기 떄문에 타워 정보 갱신
+            UpdateTowerDate();
+            //타워 주변에 보이는 공격 범위도 갱신
+            towerAttackRange.OnAttackRange(currentTower.transform.position, currentTower.Range);
+        }
+        else
+        {
+            //타워 업그레이드에 필요한 비용이 부족하다고 출력
+            systemTextViewer.PrintText(MESSAGE.MONEY);
+        }
+    }
+
+    public void OnClickEventTowerSell()
+    {
+        //타워 판매
+        currentTower.Sell();
+        //선택한 타워가 사라지기 때문에 popupUI, 공격 범위 비활성화
+        OffPopup();
     }
 }

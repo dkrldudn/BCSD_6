@@ -4,9 +4,9 @@ public class Projectile : MonoBehaviour
 {
     private Movement2D movement2D;
     private Transform target;
-    private int damage;
+    private float damage;
 
-    public void Setup(Transform target, int damage)
+    public void Setup(Transform target, float damage)
     {
         movement2D = GetComponent<Movement2D>();
         //타워로부터 전달받은 목표 지점 (공격대상)
